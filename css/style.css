@@ -1,0 +1,450 @@
+/* GENERAL */
+@font-face
+{
+	font-family: 'cnr-reg';
+	src: url("../font/cnr-reg.otf") format('otf'),
+        url("../font/cnr-reg.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+	font-family: 'cnr-bold';
+	src: url("../font/cnr-bold.otf") format('otf'),
+        url("../font/cnr-bold.woff") format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face
+{
+	font-family: 'cnr-ital';
+	src: url("../font/cnr-ital.otf") format('otf'),
+        url("../font/cnr-ital.woff") format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+html {
+    background-image:
+        linear-gradient(
+            rgba(35, 35, 35, 0.8), 
+            rgba(35, 35, 35, 0.8)),
+            url("../img/bg1.jpg");
+    background-color: rgb(35, 35, 35);
+    color: whitesmoke;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 5% repeat(8, 1fr) 20%;
+    grid-template-rows: 5% repeat(2, 1fr) 1% repeat(auto-fit, minmax(1fr, 1fr)) 5%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-family: 'cnr-reg';
+    margin: 0;
+    height: 101%;
+    width: 100%;
+    object-fit: contain
+}
+
+section {
+    grid-area: 5 / 2 / 10 / 10;
+    margin-bottom: 20px;
+}
+
+h3, h4 {
+    color: rgb(255, 120, 50);
+    font-family: 'cnr-bold';
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* HEADER */
+
+header {
+    grid-area: 2 / 2 / 4 / 9;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+header h1 {
+    grid-area: 1 / 1 / 2 / 7;
+    font-size: 3em;
+    color: rgb(255, 120, 50);
+    font-family: 'cnr-bold';
+}
+
+header h2 {
+    font-size: 1.5em;
+    grid-area: 2 / 2 / 3 / 8;
+    font-family: 'cnr-bold';
+}
+
+/* NAVIGATION BAR */
+
+#navigationBar {
+    overflow: hidden;
+    display: flex; /* Permet avec le top et le right à 0 d'avoir une solution clean en gardant la responsivité de la flex box malgré la position fixed*/
+    position: fixed;
+    top: 60px;
+    right: 0;
+    z-index: 100;
+    padding-right: 40px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#mobileNavIcon {
+    overflow: hidden;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    color: whitesmoke;
+    font-size: 1.5em;
+    background-color: rgb(35, 35, 35);
+    border: 3px solid whitesmoke;
+    border-radius: 10%;
+    height: 32px;
+    width: 32px;
+    padding: 10px 10px 0 10px;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+}
+
+#navigationBar li {
+    display: inline-flex;
+    font-size: 1em;
+    padding-top: 20px;
+    padding-left: 10px;
+    border-left: 2px solid whitesmoke;
+}
+
+#navigationBar li:hover {
+    color: rgb(255, 120, 50);
+    border-left: 2px solid rgb(255, 120, 50);
+    cursor: pointer;
+}
+
+/* PRESENTATION */
+
+#presentationGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#presentationGrid h3 {
+    grid-area: 1 / 1 / 2 / 9;
+}
+
+#presentationGrid img {
+    grid-area: 2 / 1 / 5 / 3;
+
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#presentationGrid p {
+    grid-area: 2 / 3 / 5 / 9;
+    text-align: justify;
+    place-self: center;
+}
+
+#presentationGrid a {
+    grid-area: 5 / 3 / 6 / 5;
+    border: 2px solid rgb(255, 120, 50);
+    background-color: rgb(255, 120, 50);
+    color: rgb(35, 35, 35);
+    text-align: center;
+    padding: 10px;
+    place-self: center;
+}
+
+#presentation a:hover {
+    background-color: rgb(35, 35, 35);
+    color: rgb(255, 120, 50);
+}
+
+.orange {
+    color: rgb(255, 120, 50);
+}
+
+/* PORTFOLIO */
+
+#portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#portfolioGrid h3 {
+    grid-area: 1 / 1 / 2 / 9;
+}
+
+#project {
+    grid-area: 2 / 1 / 6 / 9;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 3fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.project {
+    margin: 0 20px;
+    max-width: 100%;
+    position: relative;
+}
+
+.imgPortfolio {
+    height: 100%;
+    width: 100%;
+    object-fit: contain
+}
+
+.descriptionContainer {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgba(35, 35, 35, 0.9);
+    height: 100%;
+    width: 100%;
+    object-fit: contain
+}
+
+.description {
+    font-size: 0.9em;
+    padding: 2% 4%;
+}
+
+.description, .descriptionContainer {
+    display: none;
+}
+
+.project:hover .descriptionContainer, .description {
+    display: block;
+}
+
+/* COMPETENCES*/
+
+#skillGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#skillGrid h3 {
+    grid-area: 1 / 1 / 2 / 9;
+}
+
+#htmlIcon {
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+#htmlLine{
+    grid-area: 2 / 3 / 3 / 9;
+}
+
+#cssIcon {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+#cssLine{
+    grid-area: 3 / 3 / 4 / 9;
+}
+
+#jsIcon {
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+#jsLine{
+    grid-area: 4 / 3 / 5 / 9;
+}
+
+#phpIcon {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+#phpLine{
+    grid-area: 5 / 3 / 6 / 9;
+}
+
+#skillGrid i {
+    font-size: 3em;
+    color: whitesmoke;
+    margin: 20px;
+    place-self: center;
+}
+
+.progress {
+    place-self: center;
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 10px;
+    width: 500px;
+}
+
+.progressBar {
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: rgb(255, 120, 50);
+    height: 7px;
+    width: 0;
+}
+
+.progressHtml {
+    animation: loadHtml 3s normal forwards;
+}
+
+.progressCss {
+    animation: loadCss 3s normal forwards;
+}
+
+.progressJs {
+    animation: loadJs 3s normal forwards;
+}
+
+.progressPhp {
+    animation: loadPhp 3s normal forwards;
+}
+
+@keyframes loadHtml {
+    0% { width: 0; }
+    100% { width: 90%; }
+}
+
+@keyframes loadCss {
+    0% { width: 0; }
+    100% { width: 75%; }
+}
+
+@keyframes loadJs {
+    0% { width: 0; }
+    100% { width: 65%; }
+}
+
+@keyframes loadPhp {
+    0% { width: 0; }
+    100% { width: 50%; }
+}
+
+/* CONTACT */
+
+#contactGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#contactGrid h3 {
+    grid-area: 1 / 1 / 2 / 9;
+}
+
+#lkdIcon {
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+#fbIcon {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+#twtIcon {
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+#ghIcon {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+#contactGrid i {
+    font-size: 2.5em;
+    color: whitesmoke;
+    place-self: center;
+}
+
+#contactGrid i:hover {
+    color: rgb(255, 120, 50);
+    cursor: pointer;
+}
+
+#contactForm {
+    grid-area: 2 / 3 / 6 / 9;
+}
+
+#contactForm form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#contactForm form label:first-of-type {
+    grid-area: 1 / 1 / 2 / 7;
+}
+
+#name {
+    grid-area: 2 / 1 / 3 / 5;
+    font-family: 'cnr-reg';
+}
+
+#contactForm form label:nth-of-type(2) {
+    grid-area: 3 / 1 / 4 / 7;
+}
+
+#email {
+    grid-area: 4 / 1 / 5 / 5;
+    font-family: 'cnr-reg';
+}
+
+#contactForm form label:last-of-type {
+    grid-area: 5 / 1 / 6 / 7;
+}
+
+#message {
+    grid-area: 6 / 1 / 10 / 7;
+    font-family: 'cnr-reg';
+}
+
+#sendButton {
+    grid-area: 10 / 3 / 11 / 5;
+    font-family: "cnr-reg";
+    border: 2px solid rgb(255, 120, 50);
+    background-color: rgb(255, 120, 50);
+    color: rgb(35, 35, 35);
+    place-self: center;
+    padding: 10px;
+}
+
+#sendButton:hover {
+    background-color: rgb(35, 35, 35);
+    color: rgb(255, 120, 50);
+    cursor: pointer;
+}

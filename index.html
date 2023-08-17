@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Portfolio">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta property="og:url" content="http://bcordier.fr/index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Portfolio" />
+        <meta property="og:description" content="Portfolio" />
+        <title>Portfolio</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="css/mobres.css">
+        <script src="https://kit.fontawesome.com/df0dafa5f2.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="javascript:void(0);" id="mobileNavIcon" onclick="mobileMenu()"><i class="fa-solid fa-bars"></i>
+            </a>
+            <ul id="navigationBar">
+                <a href="#presentation" onclick="sectionVisibility('presentation')"><li id="presentationLi" class="li">Présentation</li></a>
+                <a href="#portfolio" onclick="sectionVisibility('portfolio')"><li id="projetsLi" class="li">Projets</li></a>
+                <a href="#skill" onclick="sectionVisibility('skill')"><li id="skillLi" class="li">Compétences</li></a>
+                <a href="#contact" onclick="sectionVisibility('contact')"><li id="contactLi" class="li">Contact</li></a>
+            </ul>
+            <h1>Benoît<br />Cordier</h1>
+            <h2 id="typing"></h2>
+        </header>
+
+        <section id="presentation" style="display: block;">
+            <div id="presentationGrid">
+                <h3>Qui suis-je ?</h3>
+                <img src="img/myPhoto1.jpg" alt="maPhoto"/>
+                <p>
+                    Je m'appelle <span class="orange">Benoît Cordier</span>. J'ai <span class="orange">30 ans</span>.<br /><br />
+                    Actuellement en formation pour devenir <span class="orange">développeur web junior</span>, je mets tout en &oelig;uvre pour réussir dans un domaine qui m'enthousiasme.<br /><br />
+                    Curieux et avide d'apprendre, je suis à la recherche d'un stage pour valider mon cursus.
+                </p>
+                <a href="dl/cv.pdf" id="cvButton" target="_blank">Télécharger mon CV</a>
+            </div>
+        </section>
+
+        <section id="portfolio" style="display: none;">
+            <div id="portfolioGrid">
+                <h3>Mes Projets</h3>
+                <div id="project">
+                        <div class="project">
+                            <a href="http://webagency.bcordier.fr/" target="_blank"><img src="img/captureProjet1.JPG" class="imgPortfolio" alt="illustration projet 1"/>
+                            <div class="descriptionContainer">
+                                <div class="description">
+                                    <h4>Intégrez la maquette du site d'une agence web</h4>
+                                    <h5>Contexte</h5>
+                                    <div>Projet de formation</div>
+                                    <h5>Résumé</h5>
+                                    <div>S'occuper de la refonte du site web de l'agence pour laquelle on travaille.</div>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="project">
+                            <a href="http://office-tourisme-strasbourg.bcordier.fr/" target="_blank"><img src="img/captureProjet2.JPG" class="imgPortfolio" alt="illustration projet 2"/>
+                            <div class="descriptionContainer">
+                                <div class="description">
+                                    <h4>Créez un site en personnalisant un thème WordPress</h4>
+                                    <h5>Contexte</h5>
+                                    <div>Projet de formation</div>
+                                    <h5>Résumé</h5>
+                                    <div>Créer le site web de l'office de tourisme de la ville de Strasbourg en personnalisant un thème WordPress pré-existant.</div>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="project">
+                            <a href="http://velo2cergy.bcordier.fr/" target="_blank"><img src="img/captureProjet3.JPG" class="imgPortfolio" alt="illustration projet 3"/>
+                            <div class="descriptionContainer">
+                                <div class="description">
+                                    <h4>Concevez une carte interactive de location de vélos</h4>
+                                    <h5>Contexte</h5>
+                                    <div>Projet de formation</div>
+                                    <h5>Résumé</h5>
+                                    <div>Développer une single page application simulant la réservation de vélos dans une ville.</div>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="project">
+                            <a href="http://jeanforteroche.bcordier.fr/" target="_blank"><img src="img/captureProjet4.JPG" class="imgPortfolio" alt="illustration projet 4"/>
+                            <div class="descriptionContainer">
+                                <div class="description">
+                                    <h4>Créez un blog pour un écrivain</h4>
+                                    <h5>Contexte</h5>
+                                    <div>Projet de formation</div>
+                                    <h5>Résumé</h5>
+                                    <div>Créer une application de blog pour un écrivain.</div>
+                                </div>
+                            </div></a>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill" style="display: none;">
+            <div id="skillGrid">
+                <h3>Mes compétences</h3>
+                    <i class="fa-brands fa-html5" id="htmlIcon"></i>
+                    <div class="progress" id="htmlLine">
+                        <div class="progressHtml progressBar"></div>
+                    </div>
+                    <i class="fa-brands fa-css3-alt" id="cssIcon"></i>
+                    <div class="progress" id="cssLine">
+                        <div class="progressCss progressBar"></div>
+                    </div>
+                    <i class="fa-brands fa-js-square" id="jsIcon"></i>
+                    <div class="progress" id="jsLine">
+                        <div class="progressJs progressBar"></div>
+                    </div>
+                    <i class="fa-brands fa-php" id="phpIcon"></i>
+                    <div class="progress" id="phpLine">
+                        <div class="progressPhp progressBar"></div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <div id="contactGrid">
+                <h3>Me contacter</h3>
+                <div id="contactForm">
+                    <form action="mailto:bca.cordier@gmail.com" method="get" enctype="text/plain">
+                        <label for="name">Votre nom</label>
+                        <input type="text" name="Nom" id="name" required>
+                        <label for="email">Votre adresse e-mail</label>
+                        <input type="text" name="E-mail" id="email" required>
+                        <label for="message">Votre message</label>
+                        <textarea type="text" name="Message" id="message" required></textarea>
+                        <input id="sendButton" type="submit" value="Envoyer">
+                    </form>
+                </div>
+                <a href="https://www.linkedin.com/in/beno%C3%AEt-cordier-4043a0235/" target="_blank" id="lkdIcon"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/benoit.crdr" target="_blank" id="fbIcon"><i class="fa-brands fa-facebook-square"></i></a>
+                <a href="https://twitter.com/B_Cordier" target="_blank" id="twtIcon"><i class="fa-brands fa-twitter-square"></i></a>
+                <a href="https://github.com/BenoitCordier" target="_blank" id="ghIcon"><i class="fa-brands fa-github-square"></i></a>
+            </div>
+        </section>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
